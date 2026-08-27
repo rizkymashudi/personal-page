@@ -190,7 +190,7 @@ Order and content identical to the current site.
 |---|---|---|
 | (00) | Intro / hero | Syne headline with inline color chips, violet OPEN-TO-WORK badge, stacked CTAs, dot-grid ground |
 | — | Skills ticker | Black full-bleed bar, rotated −1.1°, Space Mono, `/` separated, drag to spin |
-| (01) | Featured work | Horizontal drag-scroll strip, 13 tilted color cards, visible chunky scrollbar handle |
+| (01) | Featured work | Horizontal drag-scroll strip, 14 tilted color cards (13 client projects + 1 academy project), visible chunky scrollbar handle |
 | (02) | What I do | 8 stacked tilted cards, `(02.01)`–`(02.08)`, pop-in on view |
 | — | Industry ticker | Black bar, reverse direction, `·` separated |
 | (03) | Experience | 5 bordered rows, year in a colored left cell |
