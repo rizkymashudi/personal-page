@@ -28,7 +28,3 @@
 .scroller::-webkit-scrollbar { height: 14px; }
 .scroller::-webkit-scrollbar-track { background: var(--cream); border: var(--bw) solid var(--ink); }
 .scroller::-webkit-scrollbar-thumb { background: var(--magenta); border: var(--bw) solid var(--ink); }
-
-@media (prefers-reduced-motion: reduce) {
-  .scroller { scroll-behavior: auto; }
-}

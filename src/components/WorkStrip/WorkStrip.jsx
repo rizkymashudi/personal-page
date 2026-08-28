@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { useReducedMotion } from 'framer-motion';
 import ProjectCard from '../ProjectCard/ProjectCard.jsx';
 import { PROJECTS, SUBTITLE_TEXT } from '../../data/projects.js';
 import styles from './WorkStrip.module.css';
@@ -8,11 +9,12 @@ const STEP = 320;
 export default function WorkStrip() {
   const ref = useRef(null);
   const drag = useRef({ active: false, startX: 0, startScroll: 0, moved: false });
+  const reduced = useReducedMotion();
 
   function onKeyDown(e) {
     if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
     e.preventDefault();
-    ref.current.scrollBy({ left: e.key === 'ArrowRight' ? STEP : -STEP, behavior: 'smooth' });
+    ref.current.scrollBy({ left: e.key === 'ArrowRight' ? STEP : -STEP, behavior: reduced ? 'auto' : 'smooth' });
   }
 
   function onPointerDown(e) {
