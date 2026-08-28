@@ -2,7 +2,7 @@
   --tilt: 0deg;
   border: var(--bw) solid var(--ink);
   border-radius: 0;
-  transform: rotate(var(--tilt));
+  transform: rotate(clamp(calc(-1 * var(--tilt-max)), var(--tilt), var(--tilt-max)));
   transition: transform 120ms cubic-bezier(0.34, 1.56, 0.64, 1),
               box-shadow 120ms ease-out;
 }
@@ -25,13 +25,13 @@
 
 @media (hover: hover) {
   .slab[data-interactive]:hover {
-    transform: rotate(var(--tilt)) translate(-2px, -2px);
+    transform: rotate(clamp(calc(-1 * var(--tilt-max)), var(--tilt), var(--tilt-max))) translate(-2px, -2px);
     box-shadow: var(--sh-l);
   }
 }
 
 .slab[data-interactive]:active {
-  transform: rotate(var(--tilt)) translate(3px, 3px);
+  transform: rotate(clamp(calc(-1 * var(--tilt-max)), var(--tilt), var(--tilt-max))) translate(3px, 3px);
   box-shadow: none;
 }
 
