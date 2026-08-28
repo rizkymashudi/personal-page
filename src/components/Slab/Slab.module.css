@@ -13,7 +13,7 @@
 .slab[data-fill='yellow']  { background: var(--yellow);  color: var(--ink); }
 .slab[data-fill='magenta'] { background: var(--magenta); color: var(--ink); }
 .slab[data-fill='red']     { background: var(--red);     color: var(--ink); }
-.slab[data-fill='violet']  { background: var(--violet);  color: #fff; }
+.slab[data-fill='violet']  { background: var(--violet);  color: var(--white); }
 .slab[data-fill='ink']     { background: var(--ink);     color: var(--cream); }
 .slab[data-fill='none']    { background: transparent; }
 
