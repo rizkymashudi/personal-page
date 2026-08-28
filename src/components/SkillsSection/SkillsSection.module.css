@@ -2,7 +2,7 @@
 .eyebrow { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 0.6rem; }
 .heading { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.6rem, 5vw, 2.5rem); text-transform: uppercase; margin: 0 0 2rem; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 1.5rem; }
-.card { padding: 1.1rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.card { padding: 1.1rem; display: flex; flex-direction: column; gap: 0.4rem; height: 100%; }
 .index { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em; margin: 0; }
 .name { font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; text-transform: uppercase; margin: 0; }
 .desc { font-family: var(--font-body); font-size: 0.78rem; line-height: 1.6; margin: 0; }
