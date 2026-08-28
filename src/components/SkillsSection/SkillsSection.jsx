@@ -1,4 +1,5 @@
 import Slab from '../Slab/Slab.jsx';
+import Reveal from '../Reveal/Reveal.jsx';
 import { SKILLS } from '../../data/skills.js';
 import styles from './SkillsSection.module.css';
 
@@ -11,19 +12,20 @@ export default function SkillsSection() {
       <h2 className={styles.heading}>Eight things, done properly</h2>
       <div className={styles.grid}>
         {SKILLS.map((s, i) => (
-          <Slab
-            key={s.num}
-            as="article"
-            fill={FILLS[i]}
-            shadow="l"
-            tilt={s.tilt}
-            interactive
-            className={styles.card}
-          >
-            <p className={styles.index}>{s.num}</p>
-            <h3 className={styles.name}>{s.name}</h3>
-            <p className={styles.desc}>{s.desc}</p>
-          </Slab>
+          <Reveal key={s.num} delay={i * 0.04}>
+            <Slab
+              as="article"
+              fill={FILLS[i]}
+              shadow="l"
+              tilt={s.tilt}
+              interactive
+              className={styles.card}
+            >
+              <p className={styles.index}>{s.num}</p>
+              <h3 className={styles.name}>{s.name}</h3>
+              <p className={styles.desc}>{s.desc}</p>
+            </Slab>
+          </Reveal>
         ))}
       </div>
     </section>

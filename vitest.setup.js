@@ -12,3 +12,15 @@ if (!window.matchMedia) {
     dispatchEvent: () => false,
   });
 }
+
+if (!window.IntersectionObserver) {
+  window.IntersectionObserver = class {
+    constructor() {}
+    disconnect() {}
+    observe() {}
+    takeRecords() {
+      return [];
+    }
+    unobserve() {}
+  };
+}

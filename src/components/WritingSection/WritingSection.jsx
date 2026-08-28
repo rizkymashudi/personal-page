@@ -1,4 +1,5 @@
 import Slab from '../Slab/Slab.jsx';
+import Reveal from '../Reveal/Reveal.jsx';
 import { ARTICLES, BLOG_NUM, BLOG_EYEBROW, BLOG_HEADING, MEDIUM_URL } from '../../data/blog.js';
 import styles from './WritingSection.module.css';
 
@@ -18,25 +19,26 @@ export default function WritingSection() {
 
       <div className={styles.list}>
         {ARTICLES.map((a, i) => (
-          <Slab
-            key={a.id}
-            as="article"
-            fill="cream"
-            shadow="l"
-            tilt={i % 2 === 0 ? -0.6 : 0.5}
-            className={styles.card}
-          >
-            <p className={styles.meta}>{monthYear(a.date)} · {a.readTime}</p>
-            <h3 className={styles.title}>
-              <a href={a.url} target="_blank" rel="noreferrer noopener">{a.title} ↗</a>
-            </h3>
-            <p className={styles.excerpt}>{a.excerpt}</p>
-            <ul className={styles.tags}>
-              {a.tags.map((t, j) => (
-                <li key={t} data-fill={TAG_FILLS[j % TAG_FILLS.length]}>{t}</li>
-              ))}
-            </ul>
-          </Slab>
+          <Reveal key={a.id} delay={i * 0.04}>
+            <Slab
+              as="article"
+              fill="cream"
+              shadow="l"
+              tilt={i % 2 === 0 ? -0.6 : 0.5}
+              className={styles.card}
+            >
+              <p className={styles.meta}>{monthYear(a.date)} · {a.readTime}</p>
+              <h3 className={styles.title}>
+                <a href={a.url} target="_blank" rel="noreferrer noopener">{a.title} ↗</a>
+              </h3>
+              <p className={styles.excerpt}>{a.excerpt}</p>
+              <ul className={styles.tags}>
+                {a.tags.map((t, j) => (
+                  <li key={t} data-fill={TAG_FILLS[j % TAG_FILLS.length]}>{t}</li>
+                ))}
+              </ul>
+            </Slab>
+          </Reveal>
         ))}
       </div>
 
