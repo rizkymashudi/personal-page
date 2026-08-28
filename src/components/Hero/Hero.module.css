@@ -1,0 +1,105 @@
+.hero {
+  position: relative;
+  padding: 8rem 1.5rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: clip;
+}
+
+.dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--ink) 1.3px, transparent 1.3px);
+  background-size: 22px 22px;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.eyebrow {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 1.5rem;
+}
+
+.headline {
+  position: relative;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.3rem, 9vw, 4rem);
+  line-height: 0.84;
+  letter-spacing: -2.2px;
+  text-transform: uppercase;
+  margin: 0;
+  max-width: 15ch;
+}
+
+.chip {
+  display: inline-block;
+  border: var(--bw) solid var(--ink);
+  box-shadow: var(--sh-s);
+  padding: 0 0.35rem;
+}
+.chip[data-fill='lime']   { background: var(--lime); }
+.chip[data-fill='violet'] { background: var(--violet); color: var(--white); }
+
+.outline { -webkit-text-stroke: 2px var(--ink); color: transparent; }
+
+.bio {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 1.7;
+  margin: 1.4rem 0 0;
+  max-width: 46ch;
+  text-transform: uppercase;
+}
+
+.ctas { position: relative; display: flex; gap: 0.8rem; margin-top: 1.4rem; flex-wrap: wrap; }
+
+.cta {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 1.1rem;
+  min-height: var(--tap);
+  display: inline-flex;
+  align-items: center;
+}
+
+.badgeSlot {
+  position: absolute;
+  right: 1.75rem;
+  top: 9rem;
+}
+
+.badge {
+  width: 5.75rem;
+  height: 5.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.6rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.star { position: absolute; right: 8rem; top: 17rem; font-size: 4.5rem; color: var(--cyan); rotate: 17deg; }
+
+@media (max-width: 767px) {
+  .hero { padding-top: 6.5rem; }
+  .bio { max-width: 100%; }
+  .ctas { flex-direction: column; }
+  .cta { justify-content: center; }
+  .star { display: none; }
+  .badgeSlot { right: 0.9rem; top: 12.5rem; }
+  .badge { width: 4.6rem; height: 4.6rem; font-size: 0.5rem; }
+}

@@ -1,0 +1,36 @@
+.card {
+  flex: 0 0 clamp(16rem, 24vw, 20rem);
+  min-height: 17rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  scroll-snap-align: start;
+}
+
+.index { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em; margin: 0; }
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.desc { font-family: var(--font-body); font-size: 0.75rem; line-height: 1.55; margin: 0; flex: 1; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.3rem; list-style: none; margin: 0; padding: 0; }
+
+.tags li {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  padding: 0.15rem 0.4rem;
+  border: var(--bw-thin) solid currentColor;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .card { flex-basis: 262px; min-height: 15rem; }
+}

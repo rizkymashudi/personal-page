@@ -1,0 +1,36 @@
+:root {
+  --cream: #FFFDF5;
+  --ink: #000000;
+  --lime: #B8FF00;
+  --cyan: #00D4D4;
+  --yellow: #FFD600;
+  --magenta: #FF2E88;
+  --red: #FF3B00;
+  --violet: #7B2FFF;
+  --white: #FFFFFF;
+
+  --bw: 3px;
+  --bw-thin: 2px;
+
+  --sh-s: 3px 3px 0 0 var(--ink);
+  --sh-m: 5px 5px 0 0 var(--ink);
+  --sh-l: 8px 8px 0 0 var(--ink);
+  --sh-xl: 12px 12px 0 0 var(--ink);
+
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, monospace;
+
+  --tilt-max: 2.5deg;
+  --tap: 44px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --sh-m: 4px 4px 0 0 var(--ink);
+    --sh-l: 5px 5px 0 0 var(--ink);
+    --sh-xl: 8px 8px 0 0 var(--ink);
+    --tilt-max: 1.4deg;
+  }
+}
