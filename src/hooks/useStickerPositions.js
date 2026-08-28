@@ -25,11 +25,9 @@ export default function useStickerPositions() {
   const [positions, setPositions] = useState(read);
 
   const setPosition = useCallback((id, pos) => {
-    setPositions((prev) => {
-      const next = { ...prev, [id]: pos };
-      write(next);
-      return next;
-    });
+    const next = { ...read(), [id]: pos };
+    write(next);
+    setPositions(next);
   }, []);
 
   return { positions, setPosition };

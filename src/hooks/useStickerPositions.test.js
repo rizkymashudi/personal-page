@@ -30,3 +30,15 @@ test('does not throw when localStorage is unavailable', () => {
   expect(() => renderHook(() => useStickerPositions())).not.toThrow();
   Object.defineProperty(window, 'localStorage', original);
 });
+
+test('one instance does not clobber another instance\'s saved position', () => {
+  const a = renderHook(() => useStickerPositions());
+  const b = renderHook(() => useStickerPositions());
+
+  act(() => a.result.current.setPosition('badge', { x: 10, y: 10 }));
+  act(() => b.result.current.setPosition('star', { x: 20, y: 20 }));
+
+  const stored = JSON.parse(window.localStorage.getItem('rm.stickers'));
+  expect(stored.badge).toEqual({ x: 10, y: 10 });
+  expect(stored.star).toEqual({ x: 20, y: 20 });
+});
