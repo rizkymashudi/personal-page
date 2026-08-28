@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Slab from '../Slab/Slab.jsx';
 import styles from './Nav.module.css';
 
@@ -12,12 +12,26 @@ export const NAV_LINKS = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const closeRef = useRef(null);
+  const previouslyFocused = useRef(null);
 
   useEffect(() => {
     if (!open) return undefined;
     const onKey = (e) => { if (e.key === 'Escape') setOpen(false); };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
+  }, [open]);
+
+  useLayoutEffect(() => {
+    if (!open) return undefined;
+    const main = document.querySelector('main');
+    previouslyFocused.current = document.activeElement;
+    if (main) main.inert = true;
+    closeRef.current?.focus();
+    return () => {
+      if (main) main.inert = false;
+      previouslyFocused.current?.focus?.();
+    };
   }, [open]);
 
   return (
@@ -51,8 +65,8 @@ export default function Nav() {
             <span className={styles.logo}>RM_</span>
             <button
               type="button"
+              ref={closeRef}
               className={styles.close}
-              aria-expanded={open}
               aria-label="Close menu"
               onClick={() => setOpen(false)}
             >✕</button>

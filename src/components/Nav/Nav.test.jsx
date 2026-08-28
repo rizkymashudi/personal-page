@@ -19,9 +19,18 @@ test('menu button reports collapsed state initially', () => {
 test('opening the menu exposes the panel and flips aria-expanded', async () => {
   const user = userEvent.setup();
   render(<Nav />);
-  await user.click(screen.getByRole('button', { name: /open menu/i }));
-  expect(screen.getByRole('button', { name: /close menu/i })).toHaveAttribute('aria-expanded', 'true');
+  const openBtn = screen.getByRole('button', { name: /open menu/i });
+  await user.click(openBtn);
+  expect(openBtn).toHaveAttribute('aria-expanded', 'true');
   expect(screen.getByRole('dialog', { name: /menu/i })).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: /close menu/i })).not.toHaveAttribute('aria-expanded');
+});
+
+test('opening the menu moves focus to the panel close button', async () => {
+  const user = userEvent.setup();
+  render(<Nav />);
+  await user.click(screen.getByRole('button', { name: /open menu/i }));
+  expect(screen.getByRole('button', { name: /close menu/i })).toHaveFocus();
 });
 
 test('escape closes the menu', async () => {
