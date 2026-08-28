@@ -18,6 +18,7 @@ export default function ExperienceSection() {
               fill="cream"
               shadow="l"
               tilt={i % 2 === 0 ? -0.6 : 0.5}
+              interactive
               className={styles.row}
             >
               <div className={styles.year} data-fill={YEAR_FILLS[i]}>

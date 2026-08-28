@@ -25,6 +25,7 @@ export default function WritingSection() {
               fill="cream"
               shadow="l"
               tilt={i % 2 === 0 ? -0.6 : 0.5}
+              interactive
               className={styles.card}
             >
               <p className={styles.meta}>{monthYear(a.date)} · {a.readTime}</p>
