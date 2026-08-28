@@ -1,0 +1,34 @@
+.section { padding: 4rem 0; max-width: 1200px; margin: 0 auto; overflow-x: clip; }
+.eyebrow { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 1.5rem 0.6rem; }
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 5vw, 2.5rem);
+  text-transform: uppercase;
+  margin: 0 1.5rem 0.6rem;
+}
+
+.subtitle { font-family: var(--font-body); font-size: 0.85rem; line-height: 1.6; margin: 0 1.5rem 2rem; max-width: 52ch; }
+
+.scroller {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 1.25rem 1.5rem 1.5rem;
+  scroll-snap-type: x proximity;
+  cursor: grab;
+  scrollbar-width: auto;
+  scrollbar-color: var(--magenta) var(--cream);
+}
+
+.scroller:active { cursor: grabbing; }
+
+.scroller::-webkit-scrollbar { height: 14px; }
+.scroller::-webkit-scrollbar-track { background: var(--cream); border: var(--bw) solid var(--ink); }
+.scroller::-webkit-scrollbar-thumb { background: var(--magenta); border: var(--bw) solid var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  .scroller { scroll-behavior: auto; }
+}
