@@ -7,6 +7,7 @@ import ExperienceSection from './components/ExperienceSection/ExperienceSection.
 import AboutSection from './components/AboutSection/AboutSection.jsx';
 import WritingSection from './components/WritingSection/WritingSection.jsx';
 import Footer from './components/Footer/Footer.jsx';
+import Cursor from './components/Cursor/Cursor.jsx';
 import { TECH_ITEMS, CLIENT_ITEMS } from './data/marquee.js';
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
         <WritingSection />
       </main>
       <Footer />
+      <Cursor />
     </>
   );
 }

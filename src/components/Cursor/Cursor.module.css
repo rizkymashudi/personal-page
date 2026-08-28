@@ -1,0 +1,19 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px;
+  background: var(--magenta);
+  border: var(--bw) solid var(--ink);
+  pointer-events: none;
+  z-index: 999;
+  transition: width 90ms ease-out, height 90ms ease-out, background 90ms ease-out;
+}
+
+.cursor[data-hot='true'] { width: 32px; height: 32px; margin: -16px 0 0 -16px; background: var(--lime); }
+
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .cursor { display: none; }
+}

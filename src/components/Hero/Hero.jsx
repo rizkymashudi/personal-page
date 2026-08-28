@@ -1,4 +1,5 @@
 import Slab from '../Slab/Slab.jsx';
+import Sticker from '../Sticker/Sticker.jsx';
 import styles from './Hero.module.css';
 
 export default function Hero() {
@@ -28,17 +29,12 @@ export default function Hero() {
         </Slab>
       </div>
 
-      <Slab
-        data-ornament
-        aria-hidden="true"
-        fill="violet"
-        shadow="m"
-        tilt={-10}
-        className={styles.badge}
-      >
-        Open<br />to<br />work
-      </Slab>
-      <span data-ornament aria-hidden="true" className={styles.star}>★</span>
+      <Sticker id="badge" data-ornament className={styles.badgeSlot}>
+        <Slab fill="violet" shadow="m" tilt={-10} className={styles.badge}>
+          Open<br />to<br />work
+        </Slab>
+      </Sticker>
+      <Sticker id="star" data-ornament className={styles.star}>★</Sticker>
     </section>
   );
 }

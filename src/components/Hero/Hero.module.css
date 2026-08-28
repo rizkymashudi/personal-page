@@ -72,10 +72,13 @@
   align-items: center;
 }
 
-.badge {
+.badgeSlot {
   position: absolute;
   right: 1.75rem;
   top: 9rem;
+}
+
+.badge {
   width: 5.75rem;
   height: 5.75rem;
   display: flex;
@@ -97,5 +100,6 @@
   .ctas { flex-direction: column; }
   .cta { justify-content: center; }
   .star { display: none; }
-  .badge { right: 0.9rem; top: 12.5rem; width: 4.6rem; height: 4.6rem; font-size: 0.5rem; }
+  .badgeSlot { right: 0.9rem; top: 12.5rem; }
+  .badge { width: 4.6rem; height: 4.6rem; font-size: 0.5rem; }
 }
