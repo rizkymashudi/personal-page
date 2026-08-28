@@ -49,9 +49,11 @@ the approved mockups.
 
 ### 4.1 Stroke
 
-Single canonical stroke: **3px solid `#000000`**. Deviations only for deliberate
-hierarchy (2px on small tag pills). Never mixed arbitrarily — inconsistent stroke
-width is what makes neobrutalism read as accidental rather than intentional.
+Single canonical stroke: **3px solid `#000000`**. One deliberate deviation:
+`--bw-thin` (2px) on small inline elements — tag pills and prose highlights —
+where a 3px border would overwhelm the text it wraps and break line rhythm.
+Never mixed arbitrarily beyond that: inconsistent stroke width is what makes
+neobrutalism read as accidental rather than intentional.
 
 ### 4.2 Shadow
 
