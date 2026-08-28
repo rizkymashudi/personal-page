@@ -39,6 +39,22 @@ test('heading levels never skip', () => {
   }
 });
 
+test('every section opens with an h2, except hero which opens with the h1', () => {
+  const { container } = render(<App />);
+  const sections = container.querySelectorAll('main section');
+  expect(sections.length).toBeGreaterThan(0);
+
+  for (const section of sections) {
+    const firstHeading = section.querySelector('h1, h2, h3, h4, h5, h6');
+    expect(firstHeading, `section #${section.id || '(no id)'} has no heading`).not.toBeNull();
+    const expected = section.id === 'intro' ? 'H1' : 'H2';
+    expect(
+      firstHeading.tagName,
+      `section #${section.id || '(no id)'} should open with ${expected}, got ${firstHeading.tagName}`
+    ).toBe(expected);
+  }
+});
+
 test('no image lacks alt text', () => {
   const { container } = render(<App />);
   for (const img of container.querySelectorAll('img')) {
